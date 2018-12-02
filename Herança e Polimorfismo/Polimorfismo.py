@@ -29,3 +29,5 @@ cocaCola = Refrigerante('cola', '2L', 5.59)
 # As mensagens que aperecerão devem ser diferentes, pois foi feito polimorfismo
 delValle.detalhe()
 cocaCola.detalhe()
+
+# Vídeo explicativo: https://www.youtube.com/watch?v=WpxagxS2trU&t=681s&index=2&list=PLDrVHdiJ4rLHeDWVHbFARCfKLPc3mEXQR

@@ -23,3 +23,5 @@ cocaCola = Refrigerante('Cola', '2L', 5.50)
 
 print(delValle.sabor)
 print(cocaCola.sabor)
+
+# Vídeo explicativo: https://www.youtube.com/watch?v=WpxagxS2trU&t=681s&index=2&list=PLDrVHdiJ4rLHeDWVHbFARCfKLPc3mEXQR
