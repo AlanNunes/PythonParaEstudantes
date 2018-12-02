@@ -13,7 +13,7 @@ Exemplo:
 │   ├── grafico.jpg            # Arquivos explicativos
 ├── Listas e Tuplas            # Nome do tema
 │   ├── exemplo1.py            # Arquivos explicativos
-│   ├── apresentação.pdf              # Arquivos explicativos
+│   ├── apresentação.pdf       # Arquivos explicativos
   ```
 ## Links Úteis
 [Herança e Polimorfismo](https://www.youtube.com/watch?v=WpxagxS2trU&index=2&t=681s&list=PLDrVHdiJ4rLHeDWVHbFARCfKLPc3mEXQR)
