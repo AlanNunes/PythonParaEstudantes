@@ -16,4 +16,4 @@ Exemplo:
 │   ├── apresentação.pdf       # Arquivos explicativos
   ```
 ## Links Úteis
-[Herança e Polimorfismo](https://www.youtube.com/watch?v=WpxagxS2trU&index=2&t=681s&list=PLDrVHdiJ4rLHeDWVHbFARCfKLPc3mEXQR)
+[Herança e Polimorfismo](https://www.youtube.com/watch?v=WpxagxS2trU)
