@@ -1,6 +1,6 @@
 class No:
     def __init__(self, e):
-        self.__elemento = e
+        self._elemento = e
         self._proximo = None
     def getElemento(self):
         return self._elemento
