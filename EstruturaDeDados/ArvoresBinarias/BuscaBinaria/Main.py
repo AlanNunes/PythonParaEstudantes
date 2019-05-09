@@ -10,6 +10,7 @@ def menu():
     print('2 - remover \n')
     print('3 - pré ordem \n')
     print('4 - em ordem \n')
+    print('5 - Busca valor \n')
     print('0 - termina \n')
     opcao = int(input('Digite uma opção: '))
     return opcao
@@ -28,5 +29,10 @@ while opcao != 0:
         m.getch() #Espera o usuário teclar algo
     elif opcao == 4:
         arvoreBinaria.emOrdem(arvoreBinaria.getRaiz())
+        m.getch() #Espera o usuário teclar algo
+    elif opcao == 5:
+        valor = int(input('Digite um valor: '))
+        resultado = arvoreBinaria.buscaValor(arvoreBinaria.getRaiz(), valor)
+        print(resultado)
         m.getch() #Espera o usuário teclar algo
     opcao = menu()
