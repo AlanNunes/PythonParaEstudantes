@@ -2,6 +2,7 @@ from Elemento import Elemento
 from No import No
 from ArvoreBuscaBinaria import ArvoreBuscaBinaria
 import os
+import msvcrt as m
 
 def menu():
     os.system('cls')
@@ -24,6 +25,8 @@ while opcao != 0:
         arvoreBinaria.remove(valor)
     elif opcao == 3:
         arvoreBinaria.preOrdem(arvoreBinaria.getRaiz())
+        m.getch() #Espera o usuário teclar algo
     elif opcao == 4:
         arvoreBinaria.emOrdem(arvoreBinaria.getRaiz())
+        m.getch() #Espera o usuário teclar algo
     opcao = menu()
