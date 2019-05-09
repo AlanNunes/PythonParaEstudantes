@@ -10,9 +10,9 @@ class ArvoreBuscaBinaria:
         self._raiz = n
     def arvoreVazia(self):
         return self._raiz == None
-    def criaNo(self, ele):#ele deve ser inteiro
+    def criaNo(self, v):#ele deve ser inteiro
         no = No()
-        no.getElemento().setChave()
+        no.getElemento().setValor(v)
         return no
     def insereNo(self, v):
         if self.arvoreVazia():
@@ -21,23 +21,23 @@ class ArvoreBuscaBinaria:
             self.insere(None, self.getRaiz(), v)
     def insere(self, pai, atual, v):
         if(atual != None):
-            if(v < atual.getElemento().getChave()):
-                insere(atual, atual.getFilhoEsquerda(), v)
+            if(v < atual.getElemento().getValor()):
+                self.insere(atual, atual.getFilhoEsquerda(), v)
             else:
-                insere(atual, atual.getFilhoDireita(), v)
+                self.insere(atual, atual.getFilhoDireita(), v)
         else:
             x = self.criaNo(v)
-            if(v < pai.getElemento().getChave()):
+            if(v < pai.getElemento().getValor()):
                 pai.setFilhoEsquerda(x)
             else:
                 pai.setfilhoDireita(x)
     def preOrdem(self, no): #raíz
             if(no != None):
-                print(no.getElemento().getChave())
+                print(no.getElemento().getValor())
                 self.preOrdem(no.getFilhoEsquerda())
                 self.preOrdem(no.getFilhoDireita())
     def emOrdem(self, no): #raíz
             if(no != None):
                 self.emOrdem(no.getFilhoEsquerda())
-                print(no.getElemento().getChave())
+                print(no.getElemento().getValor())
                 self.emOrdem(no.getFilhoDireita())
