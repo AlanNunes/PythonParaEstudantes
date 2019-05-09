@@ -41,3 +41,13 @@ class ArvoreBuscaBinaria:
                 self.emOrdem(no.getFilhoEsquerda())
                 print(no.getElemento().getValor())
                 self.emOrdem(no.getFilhoDireita())
+    def buscaValor(self, pai, valor):
+        if pai != None:
+            if pai.getElemento().getValor() == valor:
+                return True
+            else:
+                if valor < pai.getElemento().getValor():
+                    self.buscaValor(pai.getFilhoEsquerda(), valor)
+                else:
+                    self.buscaValor(pai.getFilhoDireita(), valor)
+        return False
