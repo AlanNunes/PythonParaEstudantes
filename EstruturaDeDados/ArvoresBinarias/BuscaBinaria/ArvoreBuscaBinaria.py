@@ -50,3 +50,10 @@ class ArvoreBuscaBinaria:
                     return self.buscaValor(pai.getFilhoEsquerda(), valor)
                 else:
                     return self.buscaValor(pai.getFilhoDireita(), valor)
+    # Retorna a quantidade de nós na árvore
+    def getQuantidadeNos(self, n):
+        if n != None:
+            x = self.getQuantidadeNos(n.getFilhoEsquerda())
+            y = self.getQuantidadeNos(n.getFilhoDireita())
+            return x + y + 1
+        return 0
