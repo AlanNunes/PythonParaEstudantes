@@ -47,7 +47,6 @@ class ArvoreBuscaBinaria:
                 return True
             else:
                 if valor < pai.getElemento().getValor():
-                    self.buscaValor(pai.getFilhoEsquerda(), valor)
+                    return self.buscaValor(pai.getFilhoEsquerda(), valor)
                 else:
-                    self.buscaValor(pai.getFilhoDireita(), valor)
-        return False
+                    return self.buscaValor(pai.getFilhoDireita(), valor)
