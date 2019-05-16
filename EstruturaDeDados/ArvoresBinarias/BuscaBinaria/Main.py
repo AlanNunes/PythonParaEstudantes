@@ -12,6 +12,7 @@ def menu():
     print('4 - em ordem \n')
     print('5 - Busca valor \n')
     print('6 - Conta quantos nós existem na árvore \n')
+    print('7 - Conta a altura de um nó \n')
     print('0 - termina \n')
     opcao = int(input('Digite uma opção: '))
     return opcao
@@ -38,6 +39,11 @@ while opcao != 0:
         m.getch() #Espera o usuário teclar algo
     elif opcao == 6:
         resultado = arvoreBinaria.getQuantidadeNos(arvoreBinaria.getRaiz())
+        print(resultado)
+        m.getch() #Espera o usuário teclar algo
+    elif opcao == 7:
+        valor = int(input('Digite um valor: '))
+        resultado = arvoreBinaria.alturaNo(arvoreBinaria.getRaiz(), valor)
         print(resultado)
         m.getch() #Espera o usuário teclar algo
     opcao = menu()
