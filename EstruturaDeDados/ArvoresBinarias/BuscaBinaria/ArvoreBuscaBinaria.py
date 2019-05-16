@@ -4,21 +4,27 @@ from No import No
 class ArvoreBuscaBinaria:
     def __init__(self):
         self._raiz = None
+
     def getRaiz(self):
         return self._raiz
+
     def setRaiz(self, n):
         self._raiz = n
+
     def arvoreVazia(self):
         return self._raiz == None
+
     def criaNo(self, v):#ele deve ser inteiro
         no = No()
         no.getElemento().setValor(v)
         return no
+
     def insereNo(self, v):
         if self.arvoreVazia():
             self.setRaiz(self.criaNo(v))
         else:
             self.insere(None, self.getRaiz(), v)
+
     def insere(self, pai, atual, v):
         if(atual != None):
             if(v < atual.getElemento().getValor()):
@@ -31,16 +37,19 @@ class ArvoreBuscaBinaria:
                 pai.setFilhoEsquerda(x)
             else:
                 pai.setfilhoDireita(x)
+
     def preOrdem(self, no): #raíz
             if(no != None):
                 print(no.getElemento().getValor())
                 self.preOrdem(no.getFilhoEsquerda())
                 self.preOrdem(no.getFilhoDireita())
+
     def emOrdem(self, no): #raíz
             if(no != None):
                 self.emOrdem(no.getFilhoEsquerda())
                 print(no.getElemento().getValor())
                 self.emOrdem(no.getFilhoDireita())
+
     def buscaValor(self, pai, valor):
         if pai != None:
             if pai.getElemento().getValor() == valor:
@@ -50,6 +59,8 @@ class ArvoreBuscaBinaria:
                     return self.buscaValor(pai.getFilhoEsquerda(), valor)
                 else:
                     return self.buscaValor(pai.getFilhoDireita(), valor)
+        return False 
+
     # Retorna a quantidade de nós na árvore
     def getQuantidadeNos(self, n):
         if n != None:
@@ -57,3 +68,25 @@ class ArvoreBuscaBinaria:
             y = self.getQuantidadeNos(n.getFilhoDireita())
             return x + y + 1
         return 0
+    
+    def getAlturaNo(self, n):
+        if n != None:
+            x = self.getQuantidadeNos(n.getFilhoEsquerda())
+            y = self.getQuantidadeNos(n.getFilhoDireita())
+            return x + y + 1
+        return 0
+
+    def alturaNo(self, n, v):
+        if(self.buscaValor(n,v)):
+            return self.achaElemento(n, v, 0)
+        else:
+            return -1  
+
+    def achaElemento(self, n, v, e):
+        if n != None:
+            if e == 0 and v == n.getElemento().getValor():
+                e = 1
+            x = self.achaElemento(n.getFilhoEsquerda(), v, e)    
+            y = self.achaElemento(n.getFilhoDireita(), v, e)
+            return (x if x > y else y) + e
+        return 0  
