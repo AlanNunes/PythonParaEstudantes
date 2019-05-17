@@ -89,4 +89,36 @@ class ArvoreBuscaBinaria:
             x = self.achaElemento(n.getFilhoEsquerda(), v, e)    
             y = self.achaElemento(n.getFilhoDireita(), v, e)
             return (x if x > y else y) + e
-        return 0  
+        return 0
+    
+    def nivelElemento(self, n, v):
+        if n != None:
+            if v == n.getElemento().getValor():
+                return 0
+            elif n.getElemento().getValor() > v:
+                return self.nivelElemento(n.getFilhoEsquerda(), v) + 1
+            else:
+                return self.nivelElemento(n.getFilhoDireita(), v) + 1
+    def removeArveres(self, n):
+        if n != None:
+            self.removeArveres(n.getFilhoEsquerda())
+            self.removeArveres(n.getFilhoDireita())
+            n.setFilhoEsquerda(None)
+            n.setfilhoDireita(None)
+    def inverteArveres(self, n):
+        if n != None:
+            self.removeArveres(n.getFilhoEsquerda())
+            self.removeArveres(n.getFilhoDireita())
+            x = n.getFilhoDireita()
+            n.setfilhoDireita(n.getFilhoEsquerda())
+            n.setFilhoEsquerda(x.getFilhoDireita())
+    def nivelaNivel(self, n):
+        f = []
+        f.append(a)
+        while len(f) > 0:
+            n = f.pop(0)
+            print(n.getElemento().getValor())
+            if n.getFilhoEsquerda() != None:
+                f.append(n.getFilhoEsquerda())
+            if n.getFilhoDireita() != None:
+                f.append(n.getFilhoDireita())
