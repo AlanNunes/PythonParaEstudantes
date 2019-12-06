@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<form action="{% url 'filme_edit' pk %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit' class="form-control btn btn-primary" name='button'>Alterar</button>
+</form>
+
+{% endblock %}

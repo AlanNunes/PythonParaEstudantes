@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="table-responsive-sm">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Filme</th>
+              <th scope="col">Gênero</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Alterar</th>
+              <th scope="col">Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for filme in filmes %}
+            <tr>
+                <td>{{ filme.filme }}</td>
+                <td>{{ filme.genero.genero }}</td>
+                <td>{{ filme.quantidade }}</td>
+                <td>{{ filme.preco }}</td>
+                <td><a href="{% url 'filme_edit' filme.id %}" class="btn btn-primary">Alterar<a></td>
+                <td><a href="{% url 'filme_delete' filme.id %}" class="btn btn-danger">Excluir<a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+  </div>
+
+{% endblock  %}
