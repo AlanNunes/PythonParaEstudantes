@@ -17,3 +17,7 @@ Exemplo:
   ```
 ## Links Úteis
 [Herança e Polimorfismo](https://www.youtube.com/watch?v=WpxagxS2trU)
+
+[Uma linguagem de programação brasileira construído em Python](https://github.com/AlanNunes/compilador-lpb)
+
+[Uma outra linguagem de programação em Python](https://github.com/AlanNunes/Compiler)
